@@ -10,7 +10,7 @@ const NavBar = (props) => {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <Link to='/' className="navbar-brand">{props.logo}</Link>
+            <Link to='/' className="navbar-brand" style={{color: '#00AD41'}}>{props.logo}</Link>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">

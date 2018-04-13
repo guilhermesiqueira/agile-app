@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import ReleaseForm from '../ui/ReleaseForm';
 
 class Release extends Component {
 
     constructor() {
         super();
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
             releases: [
                 {
@@ -30,9 +32,21 @@ class Release extends Component {
         }
     }
 
+    handleSubmit(e, {name, date}) {
+        e.preventDefault();
+        var state = this.state;
+        var myRelease= {
+            id: state.releases.length +1 ,
+            releaseName: name,
+            releaseDate: date,
+        }
+        this.setState({releases: state.releases.concat(myRelease)});
+    }
+
     render() {
         return (
             <div className="text-center" style={{marginTop: '25px'}}>
+                <ReleaseForm submitHandler={this.handleSubmit} />
                 <table className="table table-hover">
                     <thead>
                         <tr>
@@ -49,7 +63,7 @@ class Release extends Component {
                                     <th scope="row">{release.id}</th>
                                     <td>{release.releaseName}</td>
                                     <td>{release.releaseDate}</td>
-                                    <td><button type="button" className="btn btn-outline-danger btn-sm">REMOVER</button></td>
+                                    <td><button type="button" className="btn btn-danger btn-sm">REMOVER</button></td>
                                 </tr>
                             );
                         })}
