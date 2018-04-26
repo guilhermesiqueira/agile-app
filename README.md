@@ -7,6 +7,10 @@ Below you will find some information on how to perform common tasks.
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 This project will have a API ExpressJS.
 
+<p align="center">
+  <img src="https://i.imgur.com/JHI9Xxk.png" alt="test" />
+</p>
+
 ## To run this project
 
 In the project directory, you can run:
